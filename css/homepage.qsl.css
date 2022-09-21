@@ -1,0 +1,502 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;1,300&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: "Poppins", sans-serif; */
+  font-family: "Poppins", Arial, sans-serif;
+}
+html{
+    scroll-behavior: smooth;
+  }
+  img{
+    max-width: 100%;
+  }
+
+  /* NAV */
+  .logo{
+    letter-spacing: 1.5px;
+    color: var(--color-txt-primary);
+    max-height: 3rem;
+    user-select: none;
+    cursor: pointer;
+    /* outline: 2px solid black; */
+    font-size: 1.2rem;
+
+  }
+  a{
+    text-decoration: none;
+    color: var(--color-bg-primary);
+    cursor: pointer;
+    font-weight: 600;
+  }
+  a:hover{
+    color: unset;
+  }
+  nav{
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    grid-template-columns: 1fr 4fr 2fr ;
+    align-items: center;
+    padding: 0.5rem;
+    background: #fff;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    height: 65px;
+    top: 0;
+    left: 0;
+  }
+  nav a, nav span{
+    margin-right: 1rem;
+    /* color: rgb(3, 1, 37); */
+    color: #08084a;
+    cursor: pointer;
+  }
+  nav span{
+    color: var(--color-txt-primary);
+    font-weight: 500;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: 100ms ease-in;
+    display: inline-block;
+  }
+  nav span:hover{
+    transform: scale(1.03);
+    opacity: .8;
+  }
+  .hamburger{
+    display: none;
+    cursor: pointer;
+  }
+  .hamburger span{
+    display: block;
+    height: 2px;
+    margin-bottom: 0.2rem;
+    width: 1.5rem;
+    /* background:#000; */
+    background: #070743;
+  }
+  body{
+    color: #494949;
+  }
+  /* The .nav-open class is to be manipulated by js */
+  .nav-open span:nth-of-type(1){
+    position: relative;  
+    transform: rotate(45deg);
+    transition: 500ms;
+    top: 0.6rem;
+  }
+  .nav-open span:nth-of-type(2){
+    transform: scale(1,0);
+    transition: 500ms;
+    }
+    .nav-open span:nth-of-type(3){
+      position: relative;
+      transform: rotate(-45deg);
+      transition: 500ms;
+      }
+  
+  
+  .nav-links-small-screen{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    position: fixed;
+    margin-top: 3.8rem;
+    /* background: rgba(0,0,0,0.7); */
+    /* background: rgba(255, 255, 255,0.96); */
+    background: #ffffff;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: 300ms ease-in-out;
+    max-width: 75%;
+    transform: translateX(-100%);
+    z-index: 1000;
+    box-shadow: 10px 0px 1px -10px #616060bf;
+    /* color:#1b1ba0; */
+    border-radius: 0.2em;
+  }
+  
+  .nav-links-small-screen a{
+    color: #08084a;
+    font-size: 1rem;
+  }
+  .nav-links-small-screen .account span{
+    padding: 0.3rem 0.5rem;
+    border-radius: 1rem;
+    
+  }
+  .nav-links-small-screen .account span:first-of-type{
+    background: #ceceec;
+  }
+  .nav-links-small-screen .account span:nth-of-type(2){
+    background: #2a2ae4;
+    color: #fff;
+  }
+  .account span:nth-of-type(1){ /*on the big screen nav menu*/
+    border:2px solid #1b1ba0;
+    padding: 0.2rem 0.5rem;
+    border-radius: 1rem;
+  }
+  .links span:nth-of-type(2){
+    background: #2a2ae4;;
+    color:#fff;
+    padding: 0.4rem 0.5rem;
+    border-radius: 1rem;
+  }
+  .account span i{
+    font-size: 0.6rem;
+  }
+  .nav-links a{
+    color: #0e0e42;
+    font-weight: 600;
+  }
+  .nav-links a::after{
+    content: "";
+    width: 2.8rem;
+    height: 2px;
+    display: inline-block;
+    background: var(--color-bg-primary);
+    transition: 200ms ease-in-out;
+    position: relative;
+    top: 0.5rem;
+    right: 3.5rem;
+    transform: scale(0);
+  }
+  .nav-links a:hover:after{
+    transform: scale(1);
+  }
+  
+  .nav-overlay{
+    background: transparent;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+    display: none;
+  } 
+  /* NAV */
+  main{
+    margin-top: 70px;
+  }
+
+  /* SLIDE TEXTS */
+  .world--cup--updates{
+    border: 1.5px solid #d3d3d3;
+    margin: 0px 20px;
+    /* border-radius: 0px 6px 6px 0px; */
+  }
+  .worldcup--updates-items{
+    width: 100%;
+    display: flex;
+    /* margin-left: 20px; */
+    align-items: center;
+    /* justify-content: space-around; */
+  }
+  
+.slide-news-section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+.slide-news-section p{
+    overflow: hidden;
+}
+.worldcup--header{
+    background-color: #2a2ae4;
+    color: #fff;
+    padding: 3px 5px;
+    font-size: 14px;
+    font-weight: 600;
+}
+.slide-news-section p span{
+    font-size: 16px;
+    color: rgb(247, 7, 131);
+    font-weight: 500;
+    display: inline-block;
+    display: none;
+}
+
+.slide-news-section p span.text-in{
+    display: block;
+    animation: textIn 0.5s ease;
+}
+.slide-news-section p span.text-out{
+    animation: textOut 0.5s ease;
+}
+@keyframes textIn{
+    0%{
+        transform: rotateY(100%);
+    }
+    100%{
+        transform: rotateY(0%);
+    }
+}
+@keyframes textOut{
+    0%{
+        transform: translateY(0%);
+    }
+    100%{
+        transform: translateY(-100%);
+    }
+}
+  /* SLIDE TEXTS */
+
+
+  /* ======================= */
+  .banner--section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+  }
+
+  .banner--section--content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  .banner--aside img{
+    width: 150px;
+    height: 100px;
+  }
+  .banner--aside{
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 5px;
+  }
+  .banner--aside span{
+    display: block;
+  }
+  .aside--contents-row{
+    display: block;
+  }
+  .aside--content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .aside--contents-row{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .no-img{
+    border: 1px solid #000;
+  }
+
+  .banner--content{
+    display: block;
+    position: relative;
+  }
+  .banner--content img{
+    max-width: 100%;
+    width: 100%;
+  }
+  .banner-desc{
+    position: absolute;
+    bottom: 5px;
+    padding: 20px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  .timestamp{
+    display: block;
+    font-size: 10px;
+    opacity: 0.7;
+  }
+  .aside--contents-row hr{
+    color: rgb(247, 7, 131);
+  }
+  
+  /* ======================= */
+
+  /* ======================= */
+  .sports--categories--section{
+    margin: 20px 10px;
+  }
+  .sports-category{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  .sports--categories--item img{
+    width: 380px;
+    height: 300px;
+  }
+  .category--container{
+    max-width: 380px;
+  }
+  .sports--category--header{
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* border-bottom: 1px solid #000; */
+  }
+  .sports--category--header h1{
+    background-color: #870052;
+    color: #fff;
+    padding: 3px 8px;
+    /* transform: translate3d(12px, 50%, 3em); */
+    transform: skew(340deg);
+  }
+  .sports--categories--item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  .sports--categories--item .aside--content img{
+    width: 150px;
+    height: auto;
+  }
+
+  .sports--categories--item .aside--content{
+    width: 30%;
+  }
+  /* .sports--category-items{
+    width: 70%;
+  } */
+  .category-video{
+    position: relative;
+  }
+  .category--video{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    top: 20%;
+    left: 50%;
+    color: #fff;
+    font-size: 25px;
+    background-color: #870052;
+    /* border: 5px solid #870052; */
+    padding: 10px;
+    border-radius: 50%;
+    text-align: center;
+    transform: translate(-50%, 50%);
+  }
+  main{
+    background-color: #ddd;
+  }
+  .aside--content{
+    background-color: #fff;
+  }
+  .category--container{
+    background-color: #fff;
+  }
+
+  .categories--item{
+    padding: 10px;
+  }
+
+
+
+
+
+
+
+
+
+  /* SMALL SCREEN */
+  @media(max-width:850px){
+    main{
+      margin-top: 68px;
+    }
+    nav{
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+    }
+    .hamburger{
+      display: block;
+    }
+    nav .links{
+      display: none;
+
+    }
+    .nav-links-small-screen{
+      display: flex;
+    }
+    /* ========================== */
+    .world--cup--updates{
+        margin: 0 4px;
+      }
+      .worldcup--updates-items{
+        justify-content: space-around;
+      }
+      .slide-news-section{
+        margin-top: 10px;
+        
+      }
+      .worldcup--header h1{
+        font-size: 12px;
+      }
+      .worldcup--header{
+        width: 20%;
+        padding: 10px;
+      }
+      .slide-news-section p span{
+        text-align: left;
+        margin-left: 10px;
+        font-size: 12px;
+      }
+      /* ============== */
+      .banner--section--content{
+        flex-wrap: wrap;
+      }
+      .banner-desc{
+        font-size: 10px;
+        /* font-weight: 400; */
+      }
+      .banner--aside p a{
+        font-size: 10px;
+      }
+      .banner--aside img{
+        width: 100px;
+      }
+
+      /* ===================== */
+      .sports--categories--item{
+        flex-wrap: wrap;
+      }
+      .sports--categories--item .aside--content{
+        width: 100%;
+      }
+      .sports--categories--item .aside--content img{
+        width: 120px;
+        height: auto;
+      }
+      .sports-category{
+        flex-wrap: wrap;
+      }
+      .sports--categories--item img{
+        width: 100%;
+        height: auto;
+      }
+      .category--container{
+       width: 100%;
+      }
+      .categories--item p a{
+        font-size: 12px;
+        font-weight: 500;
+      }
+}
